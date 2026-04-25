@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Luna</title>
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+            // Luna image gallery
+            var images = ["Luna.jpg", "Luna2.jpg", "Luna3.jpg"];
+            var index = 0;
+
+            function showImage() {
+                document.getElementById("galleryImage").src = images[index];
+            }
+
+            function nextImage() {
+                index++;
+                if (index >= images.length) {
+                    index = 0;
+                }
+                showImage();
+            }
+
+            function prevImage() {
+                index--;
+                if (index < 0) {
+                    index = images.length - 1;
+                }
+                showImage();
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <nav>
+                <a href="index.html">Home</a> |
+                <a href="images2.html">Sheik</a> |
+                <a href="images3.html">Snowball</a> |
+                <a href="about.html">About</a> |
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <h2>Hi, I'm Luna!</h2>
+
+            <!-- GALLERY -->
+            <div class="gallery">
+                <button onclick="prevImage()">Previous</button>
+                <button onclick="nextImage()">Next</button>
+
+                <br>
+                                
+                <img id="galleryImage" src="Luna.jpg" alt="Luna" width="400">
+            </div>
+
+            <ul>
+                <li>Personality
+                    <ul>
+                        <li>Clingy</li>
+                        <li>Aloof</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </body>
+</html>
